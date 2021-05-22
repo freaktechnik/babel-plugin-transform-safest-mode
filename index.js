@@ -4,7 +4,7 @@ export default function({ types }) {
             MemberExpression(path) {
                 path.replaceWith(types.optionalMemberExpression(path.node.object, path.node.property, path.node.computed, true));
             },
-            optionalMemberExpression(path) {
+            OptionalMemberExpression(path) {
                 if (path.node.optional) {
                     return;
                 }
